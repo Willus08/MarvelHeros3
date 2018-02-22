@@ -3,8 +3,6 @@ package com.helpmeproductions.willus08.marvelheros.data.remote;
 
 import com.helpmeproductions.willus08.marvelheros.model.MarvelInformation;
 
-import java.util.List;
-
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;

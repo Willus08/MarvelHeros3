@@ -31,6 +31,9 @@ public class HomeScreenPresenter implements HomeScreenContract.Presenter{
 
             @Override
             public void onResponse(@NonNull Call<MarvelInformation> call, @NonNull Response<MarvelInformation> response) {
+                Log.d("test", "onResponse: " + response.code());
+                Log.d("test", "onResponse: " + response.errorBody().toString());
+                Log.d("test", "onResponse: " + call.request().url());
                 view.showInformation(response.body());
             }
 

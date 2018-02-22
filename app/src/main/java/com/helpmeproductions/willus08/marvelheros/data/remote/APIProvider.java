@@ -1,6 +1,8 @@
 package com.helpmeproductions.willus08.marvelheros.data.remote;
 
 
+import android.util.Log;
+
 import com.helpmeproductions.willus08.marvelheros.model.MarvelInformation;
 
 import retrofit2.Call;
@@ -9,7 +11,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class APIProvider {
     // example url   https://gateway.marvel.com:443/v1/public/characters?name=Iron%20Man&apikey=
-    private static final String BASE_URL ="http://gateway.marvel.com:80/";
+    private static final String BASE_URL ="http://gateway.marvel.com/";
     private static final String API_KEY = "180e0f588589d3582823a295978d6008";
     private static final String PPRIVATE_KEY ="b0c261e9e790d1c50b74736108887e44ed59a750";
     private static final String HASH = "07becf51c683440afdfff94fab889585";
@@ -40,16 +42,17 @@ public class APIProvider {
     }
 
     public static Call<MarvelInformation> getCharWithFullName(String name){
-
+      String trimedName = name.trim().replaceAll("\\s+","%20");
+        Log.d(name, "getCharWithFullName: " + trimedName);
         Retrofit retrofit = create();
         APIService services = retrofit.create(APIService.class);
-        return services.fullNameCall(TS,HASH,API_KEY,name);
+        return services.fullNameCall(TS,HASH,API_KEY,trimedName);
     }
 
     public static Call<MarvelInformation> getCharWithPartialName(String name){
-
+        String trimedName = name.replaceAll("\\s+","%20");
         Retrofit retrofit = create();
         APIService services = retrofit.create(APIService.class);
-        return services.partialNameCall(TS,HASH,API_KEY,name);
+        return services.partialNameCall(TS,HASH,API_KEY,trimedName.trim());
     }
 }

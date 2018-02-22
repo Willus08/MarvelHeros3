@@ -69,7 +69,7 @@ public class HomeScreen extends AppCompatActivity implements HomeScreenContract.
     public void showInformation(MarvelInformation info) {
         container.setVisibility(View.VISIBLE);
 
-        if(info != null){
+        if(!info.getEtag().equals(getString(R.string.empty_data_tag))){
             Result heroInfo = info.getData().getResults().get(0);
             Glide.with(this).load(heroInfo.getThumbnail().getPath()).into(heroImage);
             heroName.setText(heroInfo.getName());
