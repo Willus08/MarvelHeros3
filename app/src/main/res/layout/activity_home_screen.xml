@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="10"
+    tools:context="com.helpmeproductions.willus08.marvelheros.view.activities.home_screen.HomeScreen">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_margin="8dp"
+        android:layout_weight="3">
+        <EditText
+            android:id="@+id/etSearchName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:gravity="center"
+            android:inputType="textAutoComplete|textAutoCorrect"
+            android:hint="@string/search_hint"
+            android:textSize="24sp"
+            />
+
+        <Button
+            android:id="@+id/btnBeginSearch"
+            android:layout_margin="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/search_button_text"
+            android:layout_below="@+id/etSearchName"
+            android:layout_centerHorizontal="true"
+            android:onClick="beginSearch"/>
+
+    </RelativeLayout>
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cvHeroContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_weight="7">
+
+        <RelativeLayout
+            android:layout_margin="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:onClick="showMoreDetails">
+
+            <TextView
+                android:id="@+id/tvHomeHeroName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:textSize="24sp"
+                android:gravity="center"
+                android:layout_centerHorizontal="true"/>
+
+            <ImageView
+                android:id="@+id/ivHomeHeroImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="100dp"
+                android:maxHeight="100dp"
+                android:contentDescription="@string/image_description"
+                android:layout_below="@+id/tvHomeHeroName"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:id="@+id/tvHomeHeroDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ivHomeHeroImage"
+                android:layout_margin="16dp"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:layout_centerHorizontal="true"
+                />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+</LinearLayout>

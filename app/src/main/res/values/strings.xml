@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MarvelHeros</string>
+    <string name="search_hint">Enter a Marvel Hero\'s Name</string>
+    <string name="search_button_text">search</string>
+    <string name="image_description">HeroImage</string>
+    <string name="empty_data_tag">79ef3436d0dc139b17693635b99776556e29f495</string>
+</resources>
