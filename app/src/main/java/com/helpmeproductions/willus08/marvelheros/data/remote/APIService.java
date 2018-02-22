@@ -11,13 +11,13 @@ import retrofit2.http.Query;
 
 public interface APIService {
     @GET("GET v1/public/characters")
-    Call<List<MarvelInformation>> fullNameCall(@Query("ts") String ts,
+    Call<MarvelInformation> fullNameCall(@Query("ts") String ts,
                                                @Query("hash") String hash ,
                                                @Query("apikey") String key,
                                                @Query("name") String name);
 
     @GET("GET v1/public/characters")
-    Call<List<MarvelInformation>> partialNameCall(@Query("ts") String ts,
+    Call<MarvelInformation> partialNameCall(@Query("ts") String ts,
                                             @Query("hash") String hash ,
                                             @Query("apikey") String key,
                                             @Query("nameStartsWith") String name);
